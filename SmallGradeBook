@@ -1,0 +1,35 @@
+import comp102x.IO;
+
+/*  At this point I've learned int, double, and IO functions.
+ */
+public class SmallGradeBook
+{
+    public static void main(String[] args)
+    {
+        int examWeight = 70;    // Percentage weight given to exam
+        int labWeight = 20;     // Percentage weight given to lab work
+        int hwWeight = 10;      // Percentage weight given to homework assignment
+        double examScore;       // Exam score obtained by student
+        double labScore;        // Lab score obtained by student
+        double hwScore;         // Homework score obtained by student
+        double finalGrade;      // Final grade obtained by student
+
+        // Ask student to input scores for exam, lab and nomework
+        IO.output("Enter your exam grade: ");
+        examScore = IO.inputDouble( );
+        IO.output("Enter your lab grade: ");
+        labScore = IO.inputDouble( );
+        IO.output("Enter your homework grade: ");
+        hwScore = IO.inputDouble( );
+        
+        // Computer final grade as the weighted sum of exam, lab and homework scores
+	    examScore = examScore * (examWeight / 100.0);
+        labScore = labScore * (labWeight / 100.0);
+        hwScore = hwScore * (hwWeight / 100.0);
+        finalGrade = examScore + labScore + hwScore;
+        
+        // Print the final grade
+        System.out.println("Your final grade is " + finalGrade);  
+        
+    }
+}        
